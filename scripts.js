@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-    
+    //wykyrwyanie czy mobile
+    if (typeof window.orientation !== 'undefined') {
+        let text = document.querySelector('h1').textContent;
+        text = 'Tap to generate gradient';
+        console.log(text);
+    }
+
     function generateGradient(e) {
         if (e.which == '32') {
             const body = document.querySelector('body');
