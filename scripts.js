@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function generateGradient(e) {
-        if (e.which == '32') {
+
+        if (e.which == '32' || typeof window.orientation !== 'undefined') {
             const body = document.querySelector('body');
 
             function getRandomColor() {
