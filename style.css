@@ -1,7 +1,7 @@
 :root {
-    --firstGradientColor: red;
-    --secondGradientColor: green;
-    --angle: 10deg;
+    --firstGradientColor: #3C9D93;
+    --secondGradientColor: #E84C31;
+    --angle: 329deg;
 }
 @font-face{
     font-family:font;

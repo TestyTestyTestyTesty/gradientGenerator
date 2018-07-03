@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function generateGradient(e) {
-
         if (e.which == '32' || typeof window.orientation !== 'undefined') {
             const body = document.querySelector('body');
 
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             body.style.setProperty('--angle', getAngle() + 'deg');
         }
     }
-    document.addEventListener('keydown', generateGradient);
+    document.addEventListener('keyup', generateGradient);
     document.addEventListener('touchend', generateGradient);
 
 })
