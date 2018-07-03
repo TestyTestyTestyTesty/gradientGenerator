@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     //wykyrwyanie czy mobile
     if (typeof window.orientation !== 'undefined') {
         document.querySelector('h1').textContent = 'Tap to generate gradient';
@@ -21,12 +22,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 let number = Math.floor((Math.random() * 360) + 1);
                 return number;
             }
+
+            function getStyle() {
+                let reFirst = /\l.*?\)\)/g;
+                let body = document.querySelector('body');
+                let h2 = document.querySelector('h2');
+                let style = window.getComputedStyle(body, null).getPropertyValue("background");
+                let finalStyle = reFirst.exec(style);
+                h2.innerHTML = 'background: ' + finalStyle[0];
+            }
+
             body.style.setProperty('--firstGradientColor', getRandomColor());
             body.style.setProperty('--secondGradientColor', getRandomColor());
             body.style.setProperty('--angle', getAngle() + 'deg');
+            getStyle();
         }
     }
     document.addEventListener('keyup', generateGradient);
     document.addEventListener('touchend', generateGradient);
+
+
+
 
 })
